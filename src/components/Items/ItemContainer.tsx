@@ -1,7 +1,8 @@
-import { useRouter } from "next/router";
-import { Product } from "DTO/product";
-import { DEFAULT_IMAGE_URL } from "../../constants";
-import LikeCount from "components/common/UI/LikeCount";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
+import { Product } from "@/DTO/product";
+import { DEFAULT_IMAGE_URL } from "@/constants";
+import LikeCount from "@/components/common/UI/LikeCount";
 
 const ItemContainer = ({ item }: { item: Product }) => {
   const router = useRouter();
@@ -14,15 +15,18 @@ const ItemContainer = ({ item }: { item: Product }) => {
 
   return (
     <figure className="flex flex-col gap-4">
-      <img
+      <Image
         src={imageUrl}
         alt={item.name}
         className={
           String(item.images) === DEFAULT_IMAGE_URL
             ? "item-default-img"
-            : "item-img object-cover"
+            : "object-cover"
         }
         onClick={() => handleItemClick(item.id)}
+        width={221}
+        height={221}
+        layout="responsive"
       />
       <div className="flex flex-col gap-[6px] text-gray-800">
         <h2 className="text-[0.8rem]" onClick={() => handleItemClick(item.id)}>

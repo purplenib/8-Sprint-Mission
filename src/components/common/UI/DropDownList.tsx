@@ -1,6 +1,8 @@
+"use client";
 import React, { useState } from "react";
-import arrowDownIc from "assets/icons/ic_arrow_down.png";
-import sortIc from "assets/icons/ic_sort.png";
+import Image from "next/image";
+import arrowDownIc from "@/assets/icons/ic_arrow_down.png";
+import sortIc from "@/assets/icons/ic_sort.png";
 
 interface DropDownListProps {
   selectedCategory: string;
@@ -26,15 +28,19 @@ function DropDownList({
         onClick={(e) => setIsOpened(!isOpened)}
       >
         <span className="hidden md:block">{selectedCategory}</span>
-        <img
+        <Image
           src={sortIc}
           alt="드롭다운 정렬 아이콘"
-          className="block md:hidden  w-6 h-6 cursor-pointer"
+          className="block md:hidden cursor-pointer"
+          width={24}
+          height={24}
         />
-        <img
+        <Image
           src={arrowDownIc}
           alt="드롭다운 화살표 아이콘"
-          className="right-6 w-6 h-6 cursor-pointer max-md:hidden"
+          className="right-6 cursor-pointer max-md:hidden"
+          width={24}
+          height={24}
         />
       </button>
       {isOpened && (

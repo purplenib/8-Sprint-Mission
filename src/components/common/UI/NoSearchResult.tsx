@@ -1,4 +1,5 @@
-import emptyReplyImg from "assets/images/img_reply_empty.png";
+import emptyReplyImg from "@/assets/images/img_reply_empty.png";
+import Image from "next/image";
 
 interface NoSearchResultProps {
   category: string;
@@ -7,10 +8,11 @@ interface NoSearchResultProps {
 const NoSearchResult = ({ category }: NoSearchResultProps) => {
   return (
     <>
-      <img
+      <Image
         src={emptyReplyImg}
         alt="검색 결과 없음"
-        className="w-[196px] h-[196px]"
+        width={196}
+        height={196}
       />
       <p className="text-gray-400">검색된 {category}이 없어요.</p>
     </>

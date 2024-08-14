@@ -1,5 +1,6 @@
+"use client";
 import { useEffect, useState } from "react";
-import countPageItems from "lib/utils/countPageItems";
+import countPageItems from "@/lib/utils/countPageItems";
 
 interface PaginationProps {
   currentPage: number;

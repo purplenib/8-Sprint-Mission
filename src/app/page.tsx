@@ -1,11 +1,12 @@
-import Main from "components/common/Layout/Main";
-import Footer from "components/common/Layout/Footer";
-import Button from "components/common/UI/Button";
-import bannerTopImg from "assets/images/img_home_top.png";
-import bannerBottomImg from "assets/images/img_home_bottom.png";
-import hotItemLandingImg from "assets/images/img_home_hotItem.png";
-import searchLandingImg from "assets/images/img_home_search.png";
-import registerLadingImg from "assets/images/img_home_register.png";
+import Main from "@/components/common/Layout/Main";
+import Footer from "@/components/common/Layout/Footer";
+import Button from "@/components/common/UI/Button";
+import bannerTopImg from "@/assets/images/img_home_top.png";
+import bannerBottomImg from "@/assets/images/img_home_bottom.png";
+import hotItemLandingImg from "@/assets/images/img_home_hotItem.png";
+import searchLandingImg from "@/assets/images/img_home_search.png";
+import registerLadingImg from "@/assets/images/img_home_register.png";
+import Image from "next/image";
 
 function Home() {
   return (
@@ -24,19 +25,22 @@ function Home() {
                 />
               </div>
             </div>
-            <img
+            <Image
               src={bannerTopImg}
               alt="판다마켓 상단 배너 이미지"
               className="w-2/4 h-full object-cover"
+              width={588}
+              height={588}
             />
           </div>
         </section>
         <section className="flex flex-col mx-auto my-24 gap-[276px] w-4/6">
           <div className="h-[444px] w-[955px] bg-lightGray flex flex-row gap-16 mr-auto">
-            <img
+            <Image
               src={hotItemLandingImg}
               alt="인기 상품 랜딩 이미지"
-              className="w-[588px]"
+              width={588}
+              height={588}
             />
             <div className="flex flex-col gap-3 justify-center">
               <h1 className="text-brand text-lg font-bold">Hot item</h1>
@@ -58,17 +62,19 @@ function Home() {
                 구매하고 싶은 물품은 검색해서 <br /> 쉽게 찾아보세요
               </p>
             </div>
-            <img
+            <Image
               src={searchLandingImg}
               alt="상품 검색 랜딩 이미지"
-              className="w-[588px]"
+              width={588}
+              height={588}
             />
           </div>
           <div className="h-[444px] w-[955px] bg-lightGray flex flex-row gap-16  mr-auto">
-            <img
+            <Image
               src={registerLadingImg}
               alt="상품 등록 랜딩 이미지"
-              className="w-[588px]"
+              width={588}
+              height={588}
             />
             <div className="flex flex-col gap-3 justify-center">
               <h1 className="text-brand text-lg font-bold">Register</h1>
@@ -86,10 +92,11 @@ function Home() {
             <p className="my-auto pb-[60px] text-[40px] font-bold text-gray-700 max-xl:text-center max-xl:pb-0">
               믿을 수 있는 <br /> 판다마켓 중고거래
             </p>
-            <img
+            <Image
               src={bannerBottomImg}
               alt="판다마켓 하단 배너 이미지"
-              className="object-contain"
+              width={588}
+              height={588}
             />
           </div>
         </section>

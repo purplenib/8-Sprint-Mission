@@ -1,5 +1,7 @@
-import { Article } from "DTO/article";
-import LikeCount from "components/common/UI/LikeCount";
+import { Article } from "@/DTO/article";
+import LikeCount from "@/components/common/UI/LikeCount";
+import Image from "next/image";
+import { DEFAULT_IMAGE_URL } from "@/constants";
 
 interface BasicPostCardProps {
   article: Article;
@@ -12,10 +14,12 @@ const BasicPostCard = ({ article }: BasicPostCardProps) => {
         <h2 className="text-xl font-semibold text-gray-900">
           {article.content}
         </h2>
-        <img
-          src={article.image}
-          className="aspect-1 h-[72px] border-gray-200 border-2 rounded-md"
+        <Image
+          src={article.image || DEFAULT_IMAGE_URL}
+          className="aspect-1 border-gray-200 border-2 rounded-md"
           alt={article.title}
+          width={72}
+          height={72}
         />
       </div>
       <div className="flex flex-row justify-between">

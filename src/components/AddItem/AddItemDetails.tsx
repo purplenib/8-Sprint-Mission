@@ -1,5 +1,5 @@
 import React from "react";
-import { ItemDetails } from "app/addItem/page";
+import { ItemDetails } from "@/app/addItem/page";
 
 interface AddItemDetailsProps {
   details: ItemDetails;

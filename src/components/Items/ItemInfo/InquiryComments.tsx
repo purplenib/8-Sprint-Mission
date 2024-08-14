@@ -1,11 +1,12 @@
 import React from "react";
-import { getProductComments } from "../../../core/api";
-import { INITIAL_COMMENTS } from "../../../constants";
-import useFetch from "../../../lib/hooks/useFetch";
-import { countTime } from "../../../lib/utils/countTime";
-import { CommentResponse } from "DTO/comment";
-import ReturnButton from "components/common/UI/ReturnButton";
-import emptyInquiryImg from "assets/images/img_inquiry_empty.png";
+import Image from "next/image";
+import { getProductComments } from "@/core/api";
+import { INITIAL_COMMENTS } from "@/constants";
+import useFetch from "@/lib/hooks/useFetch";
+import { countTime } from "@/lib/utils/countTime";
+import { CommentResponse } from "@/DTO/comment";
+import ReturnButton from "@/components/common/UI/ReturnButton";
+import emptyInquiryImg from "@/assets/images/img_inquiry_empty.png";
 
 interface InquiryCommentsProps {
   productId: number | undefined;
@@ -28,10 +29,11 @@ function InquiryComments({ productId, limit }: InquiryCommentsProps) {
       <ul className="w-full flex flex-col content-start flex-grow gap-6">
         {comments.length === 0 ? (
           <li className="flex flex-col items-center gap-2">
-            <img
+            <Image
               src={emptyInquiryImg}
               alt="빈 문의 내용"
-              className="w-[196px] h-[196px]"
+              width={196}
+              height={196}
             />
             <p className="text-gray-400">아직 문의가 없어요.</p>
           </li>
@@ -43,10 +45,12 @@ function InquiryComments({ productId, limit }: InquiryCommentsProps) {
             >
               <p>{comment.content}</p>
               <div className="grid gap-1 content-center grid-rows-2 grid-cols-2">
-                <img
-                  className="grid w-10 h-10 mr-2"
+                <Image
+                  className="grid mr-2"
                   src={comment.writer.image}
                   alt="작성자"
+                  width={40}
+                  height={40}
                 />
                 <span className="grid text-sm text-gray-600">
                   {comment.writer.nickname}

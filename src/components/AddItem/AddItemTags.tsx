@@ -1,5 +1,6 @@
+"use client";
 import React, { ChangeEvent, useState } from "react";
-import { Tag } from "app/addItem/page";
+import { Tag } from "@/app/addItem/page";
 
 const AddItemTags: React.FC<{ initialTags: Tag[] }> = ({ initialTags }) => {
   const [tags, setTags] = useState<Tag[]>(initialTags);

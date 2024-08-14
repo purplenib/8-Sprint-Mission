@@ -1,18 +1,17 @@
+"use client";
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import useFetch from "lib/hooks/useFetch";
-import heartIcon from "assets/icons/ic_heart.png";
-import { getProductId } from "core/api";
+import Image from "next/image";
+import { useParams } from "next/navigation";
+import useFetch from "@/lib/hooks/useFetch";
+import heartIcon from "@/assets/icons/ic_heart.png";
+import { getProductId } from "@/core/api";
 import { INITIAL_PRODUCTID, DEFAULT_IMAGE_URL } from "../../../constants";
-import InquiryInput from "components/Items/ItemInfo/InquiryInput";
-import Main from "components/common/Layout/Main";
+import InquiryInput from "@/components/Items/ItemInfo/InquiryInput";
+import Main from "@/components/common/Layout/Main";
 
 function ItemInfo() {
-  const router = useRouter();
-  const { productId } = router.query;
-  const numericProductId = productId
-    ? parseInt(productId as string, 10)
-    : undefined;
+  const { productId } = useParams();
+  const numericProductId = Number(productId);
 
   const { data: productData = INITIAL_PRODUCTID } = useFetch(
     getProductId,
@@ -44,10 +43,12 @@ function ItemInfo() {
   return (
     <Main>
       <section className="flex gap-6 max-md:flex max-md:flex-col max-md:content-center">
-        <img
-          className={`w-[486px] h-[486px] rounded-2xl block max-w-full  max-md:w-full max-md:h-full ${
+        <Image
+          className={`rounded-2xl block max-w-full  max-md:w-full max-md:h-full ${
             imageSrc === DEFAULT_IMAGE_URL ? "item-default-img" : ""
           }`}
+          width={486}
+          height={486}
           src={imageSrc}
           alt={productData.name}
         />
@@ -61,13 +62,13 @@ function ItemInfo() {
             <h3 className="mt-6 font-semibold">상품 소개</h3>
             <p>{productData.description}</p>
           </div>
-          <div className="flex flex-col gap-3 text-gray-600">
+          <div className="flex flex-col gap-4 text-gray-600">
             <h3 className="mt-6 font-semibold">상품 태그</h3>
             <ul className="tags">
               {(productData.tags || []).map((tag: string, index: number) => (
                 <li
                   key={index}
-                  className="rounded-3xl bg-gray-100 text-gray-800 px-4 py-[6px]"
+                  className="rounded-3xl bg-gray-100 text-gray-800 px-4 py-[6px] inline"
                 >
                   #{tag}
                 </li>
@@ -76,7 +77,7 @@ function ItemInfo() {
           </div>
           <div className="flex px-3 py-1 rounded-[35px] border-gray-200 border-2 absolute gap-1 bottom-0 max-md:-bottom-12 max-md:right-0">
             <button onClick={handleHeartClick}>
-              <img src={heartIcon} alt="하트 아이콘" className="h-6 w-6" />
+              <Image src={heartIcon} alt="하트 아이콘" width={24} height={24} />
             </button>
             <span className="text-gray-500 font-medium">{favoriteCount}</span>
           </div>

@@ -1,6 +1,6 @@
-import { Product } from "DTO/product";
-import { CommentResponse } from "DTO/comment";
-import { ArticleResponse } from "DTO/article";
+import { Product } from "@/DTO/product";
+import { CommentResponse } from "@/DTO/comment";
+import { ArticleResponse } from "@/DTO/article";
 
 const BASE_URL = "https://panda-market-api.vercel.app";
 

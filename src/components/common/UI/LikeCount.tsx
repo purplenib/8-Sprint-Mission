@@ -1,4 +1,4 @@
-import heartIc from "assets/icons/ic_heart.png";
+import heartIc from "@/assets/icons/ic_heart.png";
 
 interface LikeCountProps {
   count: number | undefined;

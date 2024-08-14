@@ -1,18 +1,18 @@
-import React from "react";
-import Main from "components/common/Layout/Main";
+import Main from "@/components/common/Layout/Main";
 import Link from "next/link";
-import logo from "assets/images/logo_pandamarket.png";
-import Button from "components/common/UI/Button";
-import kakaoIc from "assets/icons/ic_kakao.png";
-import googleIc from "assets/icons/ic_google.png";
-import visiblityOnIc from "assets/icons/ic_visibility_on.png";
-import visiblityOffIc from "assets/icons/ic_visibility_off.png";
+import Image from "next/image";
+import logo from "@/assets/images/logo_pandamarket.png";
+import Button from "@/components/common/UI/Button";
+import kakaoIc from "@/assets/icons/ic_kakao.png";
+import googleIc from "@/assets/icons/ic_google.png";
+import visiblityOnIc from "@/assets/icons/ic_visibility_on.png";
+import visiblityOffIc from "@/assets/icons/ic_visibility_off.png";
 
 function SignUp() {
   return (
     <Main className="flex flex-col gap-10 w-[640px] max-xl:w-[640px]">
       <Link href="/" className="flex justify-center">
-        <img src={logo} alt="판다마켓 로고" />
+        <Image src={logo} alt="판다마켓 로고" />
       </Link>
       <div className="flex flex-col gap-6 text-lg text-neutral-900">
         <form className="flex flex-col gap-6">
@@ -49,7 +49,7 @@ function SignUp() {
               className=" bg-gray-100 py-4 px-6 rounded-2xl text-gray-400 mt-6"
             />
             <button>
-              <img
+              <Image
                 src={visiblityOnIc}
                 className="absolute bottom-5 right-6 w-6 h-6"
                 alt="가시성 아이콘"
@@ -67,7 +67,7 @@ function SignUp() {
               className="bg-gray-100 py-4 px-6 rounded-2xl text-gray-400 mt-6"
             />
             <button>
-              <img
+              <Image
                 src={visiblityOnIc}
                 className="absolute bottom-4 right-6 w-6 h-6"
                 alt="가시성 아이콘"
@@ -82,14 +82,14 @@ function SignUp() {
           </p>
           <div className="flex gap-4">
             <Link href="https://www.google.com/">
-              <img
+              <Image
                 alt="구글 아이콘"
                 src={googleIc}
                 className="h-[42px] w-[42px]"
               />
             </Link>
             <Link href="https://www.kakaocorp.com/page/">
-              <img
+              <Image
                 alt="카카오톡 아이콘"
                 src={kakaoIc}
                 className="h-[42px] w-[42px]"

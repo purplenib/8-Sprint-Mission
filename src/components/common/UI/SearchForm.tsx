@@ -1,5 +1,7 @@
+"use client";
 import React, { useState } from "react";
-import searchIcon from "assets/icons/ic_search.png";
+import searchIcon from "@/assets/icons/ic_search.png";
+import Image from "next/image";
 
 interface SearchFormProps {
   divClassName?: string;
@@ -20,11 +22,13 @@ function SearchForm({
 
   return (
     <div className={`${divClassName} relative`}>
-      <img
+      <Image
         src={searchIcon}
         alt="돋보기 아이콘"
-        className="absolute top-1/2 transform -translate-y-1/2 left-6 w-4 h-4 cursor-pointer"
+        className="absolute top-1/2 transform -translate-y-1/2 left-6 cursor-pointer"
         onClick={handleSearch}
+        width={16}
+        height={16}
       />
       <input
         className={`${inputClassName} flex text-gray-400 bg-gray-100 outline-none rounded-xl py-[9px] h-full pr-5 pl-14`}

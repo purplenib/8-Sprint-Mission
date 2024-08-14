@@ -1,5 +1,6 @@
-import { useRouter } from "next/router";
-import backIc from "assets/icons/ic_back.png";
+import { useRouter } from "next/navigation";
+import backIc from "@/assets/icons/ic_back.png";
+import Image from "next/image";
 
 interface ReturnButtonProps {
   buttonText: string;
@@ -23,7 +24,7 @@ function ReturnButton({ buttonText, onClick }: ReturnButtonProps) {
       onClick={handleClick}
     >
       {buttonText}
-      <img src={backIc} className="h-6" alt="돌아가기 아이콘" />
+      <Image src={backIc} alt="돌아가기 아이콘" width={24} height={24} />
     </button>
   );
 }

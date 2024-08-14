@@ -1,5 +1,6 @@
+"use client";
 import { useEffect } from "react";
-import countPageItems from "lib/utils/countPageItems";
+import countPageItems from "@/lib/utils/countPageItems";
 
 const useResize = (
   setPageSize: (size: number) => void,

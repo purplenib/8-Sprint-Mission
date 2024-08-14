@@ -1,5 +1,7 @@
+"use client";
 import React, { useEffect, useState, useRef, ChangeEvent } from "react";
-import plusIc from "assets/icons/ic_plus.png";
+import plusIc from "@/assets/icons/ic_plus.png";
+import Image from "next/image";
 
 interface AddItemImageProps {
   image: File | null;
@@ -49,10 +51,12 @@ const AddItemImage: React.FC<AddItemImageProps> = ({
       <div className="item-img-wrap">
         <div className="upload-container">
           <div className="flex flex-col rounded-xl content-center justify-center gap-3 text-gray-400 bg-gray-100 h-[282px]">
-            <img
+            <Image
               src={plusIc}
               className="w-12 h-12 mx-auto"
               alt="플러스 아이콘"
+              width={48}
+              height={48}
             />
             <span className="text-center">이미지 등록</span>
           </div>
@@ -67,11 +71,7 @@ const AddItemImage: React.FC<AddItemImageProps> = ({
         </div>
         {previewImgUrl && (
           <div className="img-preview-container">
-            <img
-              className="img-preview"
-              src={previewImgUrl}
-              alt="이미지 미리보기"
-            />
+            <Image src={previewImgUrl} alt="이미지 미리보기" layout="fill" />
             <button onClick={removeImage} className="ic-delete-blue" />
           </div>
         )}

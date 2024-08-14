@@ -1,4 +1,5 @@
-import { CommentResponse } from "DTO/comment";
+import { CommentResponse } from "@/DTO/comment";
+import defalutItemImg from "@/assets/images/img_item_default.png";
 
 export const INITIAL_PRODUCTID = {
   createdAt: "",
@@ -23,4 +24,4 @@ export const INITIAL_COMMENTS: CommentResponse[] = [
   },
 ];
 
-export const DEFAULT_IMAGE_URL = "https://example.com/...";
+export const DEFAULT_IMAGE_URL = defalutItemImg;

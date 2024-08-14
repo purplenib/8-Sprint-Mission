@@ -1,17 +1,18 @@
+"use client";
 import { useState } from "react";
-import DropDownList from "components/common/UI/DropDownList";
-import SearchForm from "components/common/UI/SearchForm";
-import Button from "components/common/UI/Button";
-import ReturnButton from "components/common/UI/ReturnButton";
-import { getArticles } from "../../core/api";
-import { ArticleResponse } from "../../DTO/article";
-import useFetch from "../../lib/hooks/useFetch";
-import { useSearch } from "lib/hooks/useSearch";
-import { usePagination } from "lib/hooks/usePagination";
-import useResize from "lib/hooks/useResize";
-import Pagination from "components/common/UI/Pagination";
-import BasicPostCard from "components/Boards/UI/BasicPostCard";
-import NoSearchResult from "components/common/UI/NoSearchResult";
+import DropDownList from "@/components/common/UI/DropDownList";
+import SearchForm from "@/components/common/UI/SearchForm";
+import Button from "@/components/common/UI/Button";
+import ReturnButton from "@/components/common/UI/ReturnButton";
+import { getArticles } from "@/core/api";
+import { ArticleResponse } from "@/DTO/article";
+import useFetch from "@/lib/hooks/useFetch";
+import { useSearch } from "@/lib/hooks/useSearch";
+import { usePagination } from "@/lib/hooks/usePagination";
+import useResize from "@/lib/hooks/useResize";
+import Pagination from "@/components/common/UI/Pagination";
+import BasicPostCard from "@/components/Boards/UI/BasicPostCard";
+import NoSearchResult from "@/components/common/UI/NoSearchResult";
 
 function AllPosts() {
   const [selectedCategory, setSelectedCategory] = useState<string>("최신순");
