@@ -1,12 +1,9 @@
 "use client";
 import Main from "@/components/common/Layout/Main";
-import { useParams } from "next/navigation";
 import AddItemImage from "@/components/AddItem/AddItemImage";
 import Button from "@/components/common/UI/Button";
 
 function AddBoard() {
-  const { addBoard } = useParams();
-
   return (
     <Main>
       <section className="flex justify-between h-11 gap-8">

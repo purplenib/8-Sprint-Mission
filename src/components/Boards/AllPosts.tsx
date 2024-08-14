@@ -51,11 +51,7 @@ function AllPosts() {
     <section className="flex flex-col gap-6 ">
       <div className="flex flex-row justify-between h-[42px] items-center">
         <h1 className="text-gray-900 font-bold text-xl">게시글</h1>
-        <Button
-          buttonText="글쓰기"
-          href="/boards/${addBoards}"
-          className="h-full"
-        />
+        <Button buttonText="글쓰기" href="/addBoard" className="h-full" />
       </div>
       <div className="flex flex-row gap-3 max-xl:mt-12">
         <SearchForm
