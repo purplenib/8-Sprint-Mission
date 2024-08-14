@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import AddItemImage from "../components/AddItem/AddItemImage";
-import AddItemDetails from "../components/AddItem/AddItemDetails";
-import AddItemTags from "../components/AddItem/AddItemTags";
+import AddItemImage from "components/AddItem/AddItemImage";
+import AddItemDetails from "components/AddItem/AddItemDetails";
+import AddItemTags from "components/AddItem/AddItemTags";
 import Main from "components/common/Layout/Main";
 
 export interface ItemDetails {

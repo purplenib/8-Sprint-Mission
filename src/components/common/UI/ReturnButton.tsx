@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import backIc from "assets/icons/ic_back.png";
 
 interface ReturnButtonProps {
@@ -7,13 +7,13 @@ interface ReturnButtonProps {
 }
 
 function ReturnButton({ buttonText, onClick }: ReturnButtonProps) {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleClick = () => {
     if (onClick) {
       onClick(); // onClick이 있을 경우 호출
     } else {
-      navigate(-1); // 기본 동작
+      router.back(); // 기본 동작
     }
   };
 

@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import useFetch from "../lib/hooks/useFetch";
-import heartIcon from "../assets/icons/ic_heart.png";
-import { getProductId } from "../core/api";
-import { INITIAL_PRODUCTID, DEFAULT_IMAGE_URL } from "../constants";
-import InquiryInput from "../components/Items/ItemInfo/InquiryInput";
+import { useRouter } from "next/router";
+import useFetch from "lib/hooks/useFetch";
+import heartIcon from "assets/icons/ic_heart.png";
+import { getProductId } from "core/api";
+import { INITIAL_PRODUCTID, DEFAULT_IMAGE_URL } from "../../../constants";
+import InquiryInput from "components/Items/ItemInfo/InquiryInput";
 import Main from "components/common/Layout/Main";
 
 function ItemInfo() {
-  const { productId } = useParams<{ productId: string }>();
-  const numericProductId = productId ? parseInt(productId, 10) : undefined;
+  const router = useRouter();
+  const { productId } = router.query;
+  const numericProductId = productId
+    ? parseInt(productId as string, 10)
+    : undefined;
 
   const { data: productData = INITIAL_PRODUCTID } = useFetch(
     getProductId,
@@ -30,7 +33,7 @@ function ItemInfo() {
 
   // 하트 클릭 핸들러
   const handleHeartClick = () => {
-    setFavoriteCount((prevCount) => prevCount + 1);
+    setFavoriteCount((prevCount: number) => prevCount + 1);
   };
 
   // productData가 업데이트될 때 favoriteCount 업데이트
@@ -61,7 +64,7 @@ function ItemInfo() {
           <div className="flex flex-col gap-3 text-gray-600">
             <h3 className="mt-6 font-semibold">상품 태그</h3>
             <ul className="tags">
-              {(productData.tags || []).map((tag, index) => (
+              {(productData.tags || []).map((tag: string, index: number) => (
                 <li
                   key={index}
                   className="rounded-3xl bg-gray-100 text-gray-800 px-4 py-[6px]"

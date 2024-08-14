@@ -53,7 +53,7 @@ function AllItemsContainer() {
           <h1 className="font-bold text-xl content-center">판매 중인 상품</h1>
           <div className="flex flex-row gap-[10px]">
             <SearchForm inputClassName="w-[325px]" onSearch={handleSearch} />
-            <Button buttonText="상품 등록하기" to="/addItem" />
+            <Button buttonText="상품 등록하기" href="/addItem" />
             <DropDownList
               selectedCategory={selectedCategory}
               setSelectedCategory={setSelectedCategory}

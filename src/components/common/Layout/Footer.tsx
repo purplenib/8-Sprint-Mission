@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import facebookIc from "assets/icons/ic_facebook.png";
 import twitterIc from "assets/icons/ic_twitter.png";
 import youtubeIc from "assets/icons/ic_youtube.png";
@@ -15,30 +15,30 @@ function Footer({ className }: FooterProps) {
         <span className="text-gray-600">@codeit - 2024</span>
         <div className="text-gray-400 flex flex-row gap-8">
           <div>
-            <Link to="./privacy/privacy">Privacy Policy</Link>
+            <Link href="./privacy/privacy">Privacy Policy</Link>
           </div>
           <div>
-            <Link to="./faq/faq">FAQ</Link>
+            <Link href="./faq/faq">FAQ</Link>
           </div>
         </div>
         <ul className="flex flex-row gap-3">
           <li>
-            <Link to="https://www.facebook.com/">
+            <Link href="https://www.facebook.com/">
               <img alt="페이스북 아이콘" src={facebookIc} className="h-5 w-5" />
             </Link>
           </li>
           <li>
-            <Link to="https://x.com/">
+            <Link href="https://x.com/">
               <img alt="트위터 아이콘" src={twitterIc} className="h-5 w-5" />
             </Link>
           </li>
           <li>
-            <Link to="https://www.youtube.com/">
+            <Link href="https://www.youtube.com/">
               <img alt="유튜브 아이콘" src={youtubeIc} className="h-5 w-5" />
             </Link>
           </li>
           <li>
-            <Link to="https://www.instagram.com/">
+            <Link href="https://www.instagram.com/">
               <img
                 alt="인스타그램 아이콘"
                 src={instagramIc}

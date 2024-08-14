@@ -1,14 +1,13 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import { Product } from "DTO/product";
 import { DEFAULT_IMAGE_URL } from "../../constants";
 import LikeCount from "components/common/UI/LikeCount";
 
 const ItemContainer = ({ item }: { item: Product }) => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleItemClick = (productId: number) => {
-    navigate(`/Items/${productId}`);
+    router.push(`/items/${productId}`);
   };
 
   const imageUrl = item.images ? item.images[0] : DEFAULT_IMAGE_URL;

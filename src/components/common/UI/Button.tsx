@@ -1,18 +1,18 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 interface ButtonProps {
   buttonText: string;
-  to?: string;
+  href?: string;
   className?: string;
   onClick?: () => void;
 }
 
-function Button({ buttonText, to, className, onClick }: ButtonProps) {
+function Button({ buttonText, href, className, onClick }: ButtonProps) {
   // LinkButton
-  if (to) {
+  if (href) {
     return (
       <Link
-        to={to}
+        href={href}
         onClick={onClick}
         className={`${className} bg-brand text-white content-center text-center w-[133px] rounded-lg max-md:w-auto max-md:px-5`}
       >
